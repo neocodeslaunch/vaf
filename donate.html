@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate — Vector for Advancement Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/donate.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="header"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Make A Difference</span>
+    <h1>Your compassion, their transformation</h1>
+    <p class="page-hero-lead">Move the slider to choose your donation amount and see exactly what your contribution makes possible.</p>
+  </div>
+</section>
+
+<section class="section donate-slider-section">
+  <div class="container">
+    <span class="eyebrow center">Choose Your Impact</span>
+    <h2 class="center">How much would you like to give?</h2>
+
+    <div class="slider-wrap">
+      <div class="slider-left">
+        <h3>Your Donation</h3>
+        <div class="amount-display" id="amountDisplay">₹500</div>
+        <input type="range" class="slider-input" id="donationSlider">
+        <div class="slider-scale">
+          <span id="scaleMin">₹500</span>
+          <span id="scaleMax">₹25,000</span>
+        </div>
+        <div class="custom-amount">
+          <label for="customAmount">Or enter a custom amount</label>
+          <div class="custom-amount-row">
+            <input type="number" id="customAmount" placeholder="Enter amount in ₹" min="1">
+            <button class="btn btn-navy" id="customApply">Apply</button>
+          </div>
+        </div>
+      </div>
+      <div class="slider-right">
+        <h3>Your Impact</h3>
+        <div class="impact-card" id="impactCard"></div>
+      </div>
+    </div>
+
+    <div class="donate-actions">
+      <a href="#" class="btn btn-primary upi-btn" id="upiBtn">Donate ₹500 via UPI →</a>
+      <p class="donate-hint">UPI opens on mobile devices. On desktop, scan the QR code below.</p>
+    </div>
+
+    <div class="donate-secondary">
+      <div class="qr-box">
+        <div class="qr-placeholder"><span>UPI QR CODE</span></div>
+        <h4>Scan to Donate</h4>
+        <p>Scan with any UPI app — PhonePe, GPay, Paytm, or BHIM. Replace with VAF's actual QR before launch.</p>
+      </div>
+      <div class="form-box">
+        <h4>Made a donation?</h4>
+        <p>Let us know so we can send your confirmation and receipt within 24 hours.</p>
+        <a href="#" class="btn btn-white" target="_blank" rel="noopener">Share Your Donation Details →</a>
+        <p style="margin-top:1rem;font-size:0.78rem;">Opens a Google Form (name, amount, UPI transaction ID)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="eyebrow center">Other Ways To Help</span>
+    <h2 class="center">Beyond a one-time donation</h2>
+    <div class="cards-grid">
+      <article class="pcard">
+        <div class="pcard-icon" style="background:#0277BD"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="9" cy="7" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M2 20c0-3.3 3.1-5 7-5s7 1.7 7 5v1H2z"/></svg></div>
+        <h3>Volunteer</h3>
+        <p>Join our team on the ground — help run health camps, learning programs, or plantation drives.</p>
+        <a href="contact.html" class="card-link">Get in touch →</a>
+      </article>
+      <article class="pcard" style="border-top-color:#4C957A">
+        <div class="pcard-icon" style="background:#4C957A"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 2.5 6 6 6c1.8 0 3 1 3 1s1.2-1 3-1c3.5 0 5 3.5 3.5 6.5C19 16.65 12 21 12 21z"/></svg></div>
+        <h3>Sponsor a Program</h3>
+        <p>Businesses and individuals can sponsor a specific program for recurring, visible community impact.</p>
+        <a href="contact.html" class="card-link">Get in touch →</a>
+      </article>
+      <article class="pcard" style="border-top-color:#F08F1E">
+        <div class="pcard-icon" style="background:#F08F1E"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 4c-1 2-3 3-5 3l1 6 4 4 4-4 1-6c-2 0-4-1-5-3z"/></svg></div>
+        <h3>Partner With Us</h3>
+        <p>Clinics, schools, and organisations can partner with VAF on specific pillars of development.</p>
+        <a href="contact.html" class="card-link">Get in touch →</a>
+      </article>
+      <article class="pcard" style="border-top-color:#0C467B">
+        <div class="pcard-icon" style="background:#0C467B"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 16.6 5.7 21l2.3-7-6-4.6h7.6z"/></svg></div>
+        <h3>Spread the Word</h3>
+        <p>Share VAF's mission on social media and help us reach people who share our vision.</p>
+        <a href="contact.html" class="card-link">Get in touch →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <span class="eyebrow center">Good To Know</span>
+    <h2 class="center">Donation FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Is my donation secure? <span class="faq-toggle">+</span></button>
+        <div class="faq-a"><p>Yes. Payments go directly via UPI to VAF's registered bank account. No payment details are stored on this website.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will I get a receipt? <span class="faq-toggle">+</span></button>
+        <div class="faq-a"><p>Fill the short form after paying and our team will send you a confirmation and receipt within 24 hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is my donation eligible for tax exemption? <span class="faq-toggle">+</span></button>
+        <div class="faq-a"><p>VAF is working towards 80G registration. Tax exemption details will be updated here once confirmed.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="js/common.js"></script>
+<script src="js/render.js"></script>
+<script src="js/pages.js"></script>
+<script>initDonate();</script>
+</body>
+</html>

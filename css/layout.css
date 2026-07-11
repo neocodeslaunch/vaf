@@ -1,0 +1,124 @@
+/* ============================================================
+   VAF — LAYOUT
+   Header, navigation, pillar band, footer
+   ============================================================ */
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  box-shadow: 0 1px 0 var(--grey-light);
+}
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+}
+.logo-wrap { display: flex; align-items: center; gap: 10px; }
+.logo-wrap img { width: 52px; height: 52px; object-fit: contain; }
+.logo-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--navy);
+  line-height: 1.15;
+}
+.logo-name small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+.main-nav a { color: var(--charcoal); padding: 4px 0; position: relative; }
+.main-nav a:hover { color: var(--navy); }
+.main-nav a.active { color: var(--navy); font-weight: 700; }
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 2px;
+}
+.nav-donate {
+  background: var(--orange) !important;
+  color: var(--white) !important;
+  padding: 8px 18px !important;
+  border-radius: var(--radius);
+}
+.nav-donate:hover { background: var(--orange-dark) !important; }
+.nav-donate.active::after { display: none; }
+.nav-donate.active { background: var(--orange-dark) !important; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  background: none; border: none; cursor: pointer;
+}
+.nav-toggle span { display: block; height: 2px; width: 100%; background: var(--navy); border-radius: 2px; }
+
+/* ---------- Pillar Band ---------- */
+.pillar-band { background: var(--navy); padding: 7px 0; }
+.pillar-band-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.pillar { padding: 0 16px; }
+.pillar-sep { color: rgba(255,255,255,0.25); }
+.p-health { color: #4FC3F7; }
+.p-edu    { color: #81C784; }
+.p-env    { color: #80CBC4; }
+.p-dev    { color: #F08F1E; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--charcoal); color: rgba(255,255,255,0.7); padding: 60px 0 0; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.4fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+/* Ensure footer columns never overflow */
+.footer-grid > * {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.footer-logo .logo-name { color: var(--white); }
+.footer-logo .logo-name small { color: rgba(255,255,255,0.5); }
+.footer-tagline { margin-top: 0.8rem; font-size: 0.86rem; color: rgba(255,255,255,0.5); max-width: 260px; }
+.footer-links h4, .footer-meta h4 {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.footer-links { display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; }
+.footer-links a:hover { color: var(--orange); }
+.footer-meta p { font-size: 0.83rem; color: rgba(255,255,255,0.5); overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
+.footer-bottom { text-align: center; padding: 20px 0; font-size: 0.76rem; color: rgba(255,255,255,0.3); }

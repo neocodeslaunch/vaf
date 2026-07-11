@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vector for Advancement Foundation (VAF)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="hero-tag">Registered NGO — Making Real Impact</span>
+      <h1>Advancing Communities.<br><span class="accent">Inspiring Change.</span></h1>
+      <p class="hero-lead">Vector for Advancement Foundation is committed to creating lasting impact through initiatives in healthcare, education, environment and community development.</p>
+      <div class="hero-actions">
+        <a href="programs.html" class="btn btn-navy">Explore Our Work →</a>
+        <a href="contact.html" class="btn btn-outline-white">Become a Volunteer</a>
+      </div>
+    </div>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="section">
+  <div class="container about-grid">
+    <div class="about-visual">
+      <div class="about-block ab-main"><img src="images/programs/healthcare.jpg" alt="VAF at work"></div>
+      <div class="about-block ab-accent"></div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">Who We Are</span>
+      <h2>A Vector of Change</h2>
+      <p>At Vector for Advancement Foundation (VAF), we believe every positive change begins with compassion and grows through collective action.</p>
+      <p>We work with communities, institutions and partners to build healthier, educated, cleaner and empowered communities.</p>
+      <div class="attr-row">
+        <div class="attr-tag"><span class="attr-dot"></span>Community Driven</div>
+        <div class="attr-tag"><span class="attr-dot"></span>Transparent &amp; Accountable</div>
+        <div class="attr-tag"><span class="attr-dot"></span>Inclusive &amp; Collaborative</div>
+        <div class="attr-tag"><span class="attr-dot"></span>Sustainable Impact</div>
+      </div>
+      <a href="about.html" class="btn btn-outline">Learn More About Us →</a>
+    </div>
+  </div>
+</section>
+
+<!-- OUR APPROACH -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="eyebrow center">Our Approach</span>
+    <h2 class="center">Four Pillars. One Mission.</h2>
+    <div class="cards-grid" id="programCards"></div>
+  </div>
+</section>
+
+<!-- OUR IMPACT -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow center">Our Impact</span>
+    <h2 class="center">Creating Change, Together</h2>
+    <div class="stats-grid" id="impactStats"></div>
+  </div>
+</section>
+
+<!-- FEATURED CAMPAIGN -->
+<section class="section section-alt">
+  <div id="featuredCampaign"></div>
+</section>
+
+<!-- OUR VALUES -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow center">Our Values</span>
+    <h2 class="center">What We Stand For</h2>
+    <div class="values-list" id="valuesList"></div>
+  </div>
+</section>
+
+<!-- OUR PARTNERS -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="eyebrow center">Our Partners</span>
+    <h2 class="center">Stronger Together</h2>
+    <div class="title-underline"></div>
+    <div class="carousel">
+      <button class="carousel-btn prev" id="carPrev" aria-label="Previous">&#8249;</button>
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="partnersTrack"></div>
+      </div>
+      <button class="carousel-btn next" id="carNext" aria-label="Next">&#8250;</button>
+      <div class="carousel-dots" id="carDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST NEWS -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow center">Latest News</span>
+    <h2 class="center">Stay Updated</h2>
+    <div class="title-underline"></div>
+    <div class="news-list" id="newsRows" style="margin-top:2.5rem;"></div>
+    <p class="center" style="margin-top:2rem;"><a href="updates.html" class="btn btn-outline">View All News →</a></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band green">
+  <div class="container cta-inner">
+    <h2>Be the Vector of Change</h2>
+    <p>Join our mission to build a better tomorrow for all.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-white">Join as Volunteer</a>
+      <a href="donate.html" class="btn btn-navy">Donate Now ♥</a>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+<script src="js/common.js"></script>
+<script src="js/render.js"></script>
+<script src="js/pages.js"></script>
+<script>initHome();</script>
+</body>
+</html>

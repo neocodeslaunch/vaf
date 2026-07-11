@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Free Health Check-up Camp Organized in Burdwan",
+    "date": "2026-06-18",
+    "category": "Healthcare",
+    "image": "images/events/event1.jpg",
+    "summary": "VAF organized a free health check-up camp serving over 300 families with basic health screenings, medicines, and doctor consultations.",
+    "content": "In partnership with local doctors and health workers, our team set up a full-day health camp providing free check-ups, basic medicine distribution, and maternal health guidance to underserved families in the Burdwan region."
+  },
+  {
+    "title": "Career Guidance Session for Students",
+    "date": "2026-05-10",
+    "category": "Education",
+    "image": "images/events/event2.jpg",
+    "summary": "A career guidance workshop was held for secondary school students, helping them understand career pathways and skill development options.",
+    "content": "Volunteers and mentors guided over 80 students through career planning, higher education options, and digital skills, empowering the next generation to make informed decisions about their future."
+  },
+  {
+    "title": "Cleanliness Drive Brings Community Together",
+    "date": "2026-05-02",
+    "category": "Environment",
+    "image": "images/events/event3.jpg",
+    "summary": "Community members and VAF volunteers came together for a cleanliness and waste segregation drive along the riverside.",
+    "content": "Our cleanliness drive engaged local residents in cleaning public spaces and learning proper waste segregation, promoting a cleaner and healthier environment for the entire community."
+  },
+  {
+    "title": "Tree Plantation Drive - Green Tomorrow Initiative",
+    "date": "2026-04-22",
+    "category": "Environment",
+    "image": "images/gallery/gallery2.jpg",
+    "summary": "Over 300 native saplings were planted as part of our ongoing Green Tomorrow Initiative for a greener future.",
+    "content": "Volunteers, students, and community members joined hands to plant native saplings, with local schools adopting saplings to nurture through the year as part of our environmental conservation mission."
+  },
+  {
+    "title": "Skill Development Training for Women",
+    "date": "2026-04-05",
+    "category": "Community Development",
+    "image": "images/programs/development.jpg",
+    "summary": "A vocational skill development program was launched to empower women with tailoring and craft-making skills for sustainable livelihoods.",
+    "content": "Our skill development center trained women in tailoring, handicrafts, and financial literacy, helping them build independent livelihoods and strengthen their families' economic standing."
+  },
+  {
+    "title": "Free Medicine Distribution Camp",
+    "date": "2026-03-15",
+    "category": "Healthcare",
+    "image": "images/programs/healthcare.jpg",
+    "summary": "Essential medicines were distributed free of cost to elderly and underprivileged community members.",
+    "content": "In our continued healthcare mission, VAF distributed essential medicines and provided health guidance to elderly residents and families who lack regular access to medical care."
+  }
+]

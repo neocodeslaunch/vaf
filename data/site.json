@@ -1,0 +1,53 @@
+{
+  "org": {
+    "name": "Vector for Advancement Foundation",
+    "short": "VAF",
+    "tagline": "Your Compassion. Our Action. Their Transformation.",
+    "email": "[email@vaf.org.in]",
+    "phone": "[+91 XXXXX XXXXX]",
+    "address": "[Full address, Bardhaman, West Bengal]",
+    "upiId": "VAF_UPI_ID@bank"
+  },
+  "stats": [
+    { "number": "120+", "label": "Volunteers", "color": "#0277BD", "icon": "volunteers" },
+    { "number": "4,500+", "label": "Lives Impacted", "color": "#4C957A", "icon": "lives" },
+    { "number": "18+", "label": "Campaigns Conducted", "color": "#F08F1E", "icon": "campaigns" },
+    { "number": "40+", "label": "Partners & Collaborators", "color": "#0C467B", "icon": "partners" }
+  ],
+  "values": [
+    { "name": "Compassion", "color": "#0277BD", "desc": "We care deeply and serve with empathy." },
+    { "name": "Collaboration", "color": "#4C957A", "desc": "We believe in the power of partnership." },
+    { "name": "Integrity", "color": "#F08F1E", "desc": "We act with honesty, transparency and accountability." },
+    { "name": "Sustainability", "color": "#2E7D32", "desc": "We build solutions that last." },
+    { "name": "Transformation", "color": "#0C467B", "desc": "We create real change that transforms lives." }
+  ],
+  "partners": [
+    { "name": "Partner Organization", "logo": "" },
+    { "name": "UNICEF", "logo": "" },
+    { "name": "TATA TRUSTS", "logo": "" },
+    { "name": "Rotary District 3291", "logo": "" },
+    { "name": "Partner Organization", "logo": "" }
+  ],
+  "team": [
+    { "name": "Founder Name", "role": "Founder & Director", "bio": "Short bio will appear here once provided.", "photo": "" },
+    { "name": "Team Member", "role": "Programs Lead", "bio": "Short bio will appear here once provided.", "photo": "" },
+    { "name": "Team Member", "role": "Community Partnerships", "bio": "Short bio will appear here once provided.", "photo": "" },
+    { "name": "Team Member", "role": "Finance & Operations", "bio": "Short bio will appear here once provided.", "photo": "" }
+  ],
+  "impactTiers": [
+    { "amount": 500, "title": "School Supplies", "desc": "School supplies for one child for a full term", "icon": "📚", "color": "#0277BD" },
+    { "amount": 1000, "title": "Health Checkup", "desc": "A complete health checkup for one family", "icon": "🏥", "color": "#4C957A" },
+    { "amount": 2500, "title": "Plant 10 Trees", "desc": "10 native saplings planted in your name", "icon": "🌳", "color": "#2E7D32" },
+    { "amount": 5000, "title": "Skill Training", "desc": "Vocational training for 5 community members", "icon": "🎓", "color": "#F08F1E" },
+    { "amount": 10000, "title": "Learning Centre", "desc": "Funds a learning centre for one full month", "icon": "🏫", "color": "#0C467B" },
+    { "amount": 25000, "title": "Village Health Camp", "desc": "A complete health camp for an entire village", "icon": "❤️", "color": "#C62828" }
+  ],
+  "featuredCampaign": {
+    "title": "Green Tomorrow Initiative",
+    "location": "Bardhaman, West Bengal",
+    "date": "May 2024",
+    "highlight": "300+ Trees Planted",
+    "description": "A community-driven plantation drive to promote a greener and healthier environment for future generations.",
+    "image": "images/gallery/gallery2.jpg"
+  }
+}

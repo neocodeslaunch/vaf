@@ -1,0 +1,8 @@
+[
+  { "image": "images/programs/healthcare.jpg", "caption": "Free Health Check-up Camp", "category": "Healthcare" },
+  { "image": "images/events/event2.jpg", "caption": "Career Guidance Session", "category": "Education" },
+  { "image": "images/programs/environment.jpg", "caption": "Tree Plantation Drive", "category": "Environment" },
+  { "image": "images/programs/development.jpg", "caption": "Skill Development Training", "category": "Community Development" },
+  { "image": "images/gallery/gallery1.jpg", "caption": "Medicine Distribution", "category": "Healthcare" },
+  { "image": "images/gallery/gallery3.jpg", "caption": "Women Empowerment Program", "category": "Community Development" }
+]
