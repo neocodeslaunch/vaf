@@ -35,12 +35,13 @@
     { "name": "Team Member", "role": "Finance & Operations", "bio": "Short bio will appear here once provided.", "photo": "" }
   ],
   "impactTiers": [
-    { "amount": 500, "title": "School Supplies", "desc": "School supplies for one child for a full term", "icon": "📚", "color": "#0277BD" },
-    { "amount": 1000, "title": "Health Checkup", "desc": "A complete health checkup for one family", "icon": "🏥", "color": "#4C957A" },
-    { "amount": 2500, "title": "Plant 10 Trees", "desc": "10 native saplings planted in your name", "icon": "🌳", "color": "#2E7D32" },
-    { "amount": 5000, "title": "Skill Training", "desc": "Vocational training for 5 community members", "icon": "🎓", "color": "#F08F1E" },
-    { "amount": 10000, "title": "Learning Centre", "desc": "Funds a learning centre for one full month", "icon": "🏫", "color": "#0C467B" },
-    { "amount": 25000, "title": "Village Health Camp", "desc": "A complete health camp for an entire village", "icon": "❤️", "color": "#C62828" }
+    { "amount": 100, "title": "Plant 5 Saplings", "desc": "Can help plant 5 native saplings and contribute to a greener, healthier community.", "icon": "🌱", "color": "#2E7D32" },
+    { "amount": 250, "title": "Stationary Supplies", "desc": "Can provide a stationery kit with notebooks, pens, pencils, and learning essentials for one child.", "icon": "📚", "color": "#0277BD" },
+    { "amount": 500, "title": "Health Check-Up", "desc": "Can support a basic health screening for one community member during a VAF health camp.", "icon": "🩺", "color": "#4C957A" },
+    { "amount": 1000, "title": "Provide a Meal", "desc": "Can help provide nutritious meals for children or elderly beneficiaries during a community outreach programme.", "icon": "🍲", "color": "#F08F1E" },
+    { "amount": 2500, "title": "Sponsor Educational Resources", "desc": "Can sponsor educational resources for a student, including books and essential learning materials.", "icon": "🎒", "color": "#0C467B" },
+    { "amount": 5000, "title": "Mini Plantation drive", "desc": "Can support a mini plantation drive by covering saplings, protective guards, and volunteer logistics.", "icon": "🌳", "color": "#5E7C16" },
+    { "amount": 10000, "title": "Community Health Camp", "desc": "Can help organize a community health camp, supporting medicines, basic diagnostic equipment, and volunteer coordination.", "icon": "🏥", "color": "#C62828" }
   ],
   "featuredCampaign": {
     "title": "Green Tomorrow Initiative",

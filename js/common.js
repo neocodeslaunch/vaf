@@ -47,7 +47,7 @@ function renderHeader(current) {
     <div class="nav-row container">
       <a href="index.html" class="logo-wrap">
         <img src="images/logo.png" alt="VAF Logo">
-        <div class="logo-name">Vector for Advancement Foundation<small>Compassion. Action. Transformation.</small></div>
+        <div class="logo-name">VECTOR for Advancement Foundation<small>Compassion. Action. Transformation.</small></div>
       </a>
       <nav class="main-nav" id="mainNav">${links}</nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
