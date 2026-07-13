@@ -5,11 +5,14 @@
 
 /* ---------- Header / Nav ---------- */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background: var(--white);
-  box-shadow: 0 1px 0 var(--grey-light);
+  border-bottom: 1px solid var(--grey-light);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
 }
 .nav-row {
   display: flex;
@@ -45,14 +48,7 @@
 .main-nav a { color: var(--charcoal); padding: 4px 0; position: relative; }
 .main-nav a:hover { color: var(--navy); }
 .main-nav a.active { color: var(--navy); font-weight: 700; }
-.main-nav a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -2px; left: 0; right: 0;
-  height: 2px;
-  background: var(--orange);
-  border-radius: 2px;
-}
+.main-nav a.active::after { display: none; }
 .nav-donate {
   background: var(--orange) !important;
   color: var(--white) !important;

@@ -52,12 +52,6 @@ function renderHeader(current) {
       <nav class="main-nav" id="mainNav">${links}</nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-    <div class="pillar-band"><div class="pillar-band-inner">
-      <span class="pillar p-health">Healthcare</span><span class="pillar-sep">|</span>
-      <span class="pillar p-edu">Education</span><span class="pillar-sep">|</span>
-      <span class="pillar p-env">Environment</span><span class="pillar-sep">|</span>
-      <span class="pillar p-dev">Community Development</span>
-    </div></div>
   </header>`;
 }
 

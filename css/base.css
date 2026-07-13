@@ -44,6 +44,7 @@ body {
   background: var(--white);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  padding-top: 84px;
 }
 
 /* Media never overflows its container */
