@@ -99,17 +99,29 @@ function initLayout(currentPage) {
     );
   }
 
-  // Offset the body by the header's actual height so there is no gap below the
-  // fixed nav bar. The header height changes across breakpoints, so keep it synced.
+  // Offset the body by the header's EXACT height so there is never a gap (or an
+  // overlap) below the fixed nav bar — at any viewport width or device pixel size.
   syncHeaderOffset();
   window.addEventListener('resize', syncHeaderOffset);
+  window.addEventListener('orientationchange', syncHeaderOffset);
   window.addEventListener('load', syncHeaderOffset);
+  // ResizeObserver catches every header height change (line wraps, late font
+  // loads, zoom) that a resize event alone would miss — this is what makes it
+  // pixel-perfect regardless of the device.
+  const header = document.querySelector('.site-header');
+  if (header && 'ResizeObserver' in window) {
+    new ResizeObserver(syncHeaderOffset).observe(header);
+  }
+  // Fonts load asynchronously and can change the header height after first paint.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncHeaderOffset);
 }
 
 /* ---------- Match body top padding to the fixed header height ---------- */
 function syncHeaderOffset() {
   const header = document.querySelector('.site-header');
-  if (header) document.body.style.paddingTop = header.offsetHeight + 'px';
+  if (!header) return;
+  // Round up so sub-pixel header heights never leave a hairline gap.
+  document.body.style.paddingTop = Math.ceil(header.getBoundingClientRect().height) + 'px';
 }
 
 /* ---------- Data loader helper ---------- */

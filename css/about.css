@@ -1,0 +1,259 @@
+/* ============================================================
+   VAF — ABOUT PAGE
+   Page-specific layout so the About page has its own identity
+   (editorial split, statement type, colored quote band, numbered
+   mission + principle cards) while reusing the brand tokens.
+   ============================================================ */
+
+/* ---------- Hero extras ---------- */
+.about-badge {
+  display: inline-block;
+  background: rgba(240, 143, 30, 0.16);
+  border: 1px solid rgba(240, 143, 30, 0.5);
+  color: #ffd9a8;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Focus-areas card, lifted over the hero ---------- */
+.focus-band { position: relative; z-index: 2; }
+.focus-inner {
+  margin-top: -32px;
+  background: var(--white);
+  border: 1px solid var(--grey-light);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 14px 40px rgba(12, 70, 123, 0.10);
+  padding: 1.3rem 1.6rem 1.5rem;
+  text-align: center;
+}
+.focus-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.9rem;
+}
+.focus-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.focus-tags span {
+  background: var(--off-white);
+  border: 1px solid var(--grey-light);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* ---------- Opening statement (Who We Are) ---------- */
+.lead-statement { max-width: 900px; margin: 0 auto; text-align: center; }
+.big-statement {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+  line-height: 1.5;
+  color: var(--navy);
+  margin: 1rem 0 1.4rem;
+}
+.big-statement .hl { color: var(--green); }
+.statement-sub {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ---------- Why VAF Exists — editorial split ---------- */
+.why-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: start;
+}
+.why-head { position: sticky; top: 110px; }
+.why-head h2 { margin-top: 0.2em; }
+.why-accent { width: 54px; height: 4px; background: var(--orange); border-radius: 3px; margin-top: 1rem; }
+.why-body p { font-size: 1rem; }
+.why-body p + p { margin-top: 1rem; }
+
+/* ---------- Vision statement band ---------- */
+.vision-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 980px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy-light));
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 3.4rem);
+  text-align: center;
+}
+.vision-card::after {
+  content: "";
+  position: absolute;
+  right: -60px; bottom: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(240, 143, 30, 0.18);
+}
+.vision-icon {
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.2rem;
+  position: relative; z-index: 1;
+}
+.vision-icon svg { width: 30px; height: 30px; fill: none; stroke: #fff; stroke-width: 1.5; }
+.vision-card .vision-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffd9a8;
+  display: block;
+  margin-bottom: 0.8rem;
+  position: relative; z-index: 1;
+}
+.vision-card p {
+  position: relative; z-index: 1;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  line-height: 1.5;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ---------- Mission — numbered list ---------- */
+.mission-steps { max-width: 780px; margin: 1.8rem auto 0; }
+.mstep {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 1.1rem 0;
+  border-bottom: 1px dashed var(--grey-mid);
+}
+.mstep:last-child { border-bottom: none; }
+.mstep-num {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.mstep p { font-size: 0.95rem; color: var(--text-body); margin: 0.35rem 0 0; }
+.mission-close {
+  max-width: 720px;
+  margin: 1.8rem auto 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 1.02rem;
+}
+
+/* ---------- Core belief — full-width quote band ---------- */
+.belief-band {
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  padding: 60px 0;
+}
+.belief-quote { max-width: 900px; margin: 0 auto; text-align: center; }
+.belief-mark {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 0.5;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0.6rem;
+}
+.belief-quote p {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  line-height: 1.45;
+}
+.belief-tag {
+  display: inline-block;
+  margin-top: 1.3rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Philosophy — principle cards ---------- */
+.principles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 2.2rem;
+}
+.principle {
+  flex: 1 1 220px;
+  max-width: 300px;
+  background: var(--white);
+  border: 1px solid var(--grey-light);
+  border-top: 4px solid var(--pc, var(--navy));
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.4rem;
+}
+.principle-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.principle-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--grey-mid);
+}
+.principle-icon {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--pc, var(--navy));
+  display: flex; align-items: center; justify-content: center;
+}
+.principle-icon svg {
+  width: 23px; height: 23px;
+  fill: none; stroke: #fff; stroke-width: 1.9;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.principle h3 { font-size: 1.02rem; margin-bottom: 0.3em; }
+.principle p { font-size: 0.88rem; color: var(--text-muted); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .why-grid { grid-template-columns: 1fr; gap: 20px; }
+  .why-head { position: static; }
+  .why-accent { display: none; }
+}
+@media (max-width: 640px) {
+  .focus-inner { margin-top: -24px; padding: 1.1rem 1rem 1.2rem; }
+  .focus-tags span { font-size: 0.74rem; padding: 5px 11px; }
+  .mstep { gap: 13px; }
+  .mstep-num { width: 34px; height: 34px; font-size: 0.85rem; }
+}
