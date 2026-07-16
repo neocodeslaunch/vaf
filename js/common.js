@@ -49,7 +49,7 @@ function renderHeader(current) {
         <img src="images/logo.png" alt="VAF Logo">
         <div class="logo-name">
           <span class="logo-line logo-line-top">VECTOR</span>
-          <span class="logo-line logo-line-middle">for Advancement and Foundation</span>
+          <span class="logo-line logo-line-middle">for Advancement Foundation</span>
           <small>Compassion. Action. Transformation.</small>
         </div>
       </a>
