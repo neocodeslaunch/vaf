@@ -5,13 +5,7 @@
     "icon": "health",
     "image": "images/programs/healthcare.jpg",
     "short": "Promoting preventive care, health awareness and access to quality healthcare for all.",
-    "description": "Access to essential healthcare is a right, not a privilege. VAF works to bring basic health services, awareness programs, and medical support to communities that have historically been underserved by the formal health system.",
-    "points": [
-      "Free health check-up camps and community outreach",
-      "Doctor consultations and preventive healthcare",
-      "Free medicine distribution for the underprivileged",
-      "Maternal and child health awareness sessions"
-    ]
+    "description": "Good health is the foundation of a thriving community and access to essential healthcare is a right, not a privilege. VAF promotes accessible healthcare through health awareness programmes, preventive care initiatives, medical camps and partnerships with healthcare professionals and institutions. Our goal is to encourage healthier lifestyles, improve health literacy, and support communities in accessing essential healthcare services."
   },
   {
     "name": "Education",
@@ -19,13 +13,7 @@
     "icon": "education",
     "image": "images/events/event2.jpg",
     "short": "Empowering minds through quality education, digital literacy and skill development.",
-    "description": "Quality education is the most powerful tool for breaking cycles of poverty. VAF runs learning support programs, drives access to schools and materials, and supports children and youth through their educational journey.",
-    "points": [
-      "After-school learning support and tutoring",
-      "Digital literacy and computer education",
-      "Career guidance sessions for students",
-      "Scholarship and educational aid support"
-    ]
+    "description": "Education empowers individuals transforming communities and quality education is the most powerful tool for breaking cycles of poverty. VAF works to enhance learning opportunities by supporting students, promoting digital and financial literacy, organizing career guidance programmes and encouraging skill development. We believe that education is a lifelong journey that enables people to build brighter futures for themselves and society."
   },
   {
     "name": "Environment",
@@ -33,26 +21,14 @@
     "icon": "environment",
     "image": "images/programs/environment.jpg",
     "short": "Protecting our planet through sustainable practices, conservation and community participation.",
-    "description": "Healthy communities need healthy ecosystems. VAF's environmental programs focus on conservation, sustainable practices, and building awareness around the environmental challenges that directly affect our partner communities.",
-    "points": [
-      "Community tree plantation drives",
-      "Cleanliness and waste management drives",
-      "Environmental awareness workshops",
-      "Green Tomorrow Initiative - 300+ trees planted"
-    ]
+    "description": "As healthy communities need healthy ecosystems, a sustainable future depends on responsible environmental stewardship. VAF undertakes initiatives that promote environmental conservation, tree plantation, waste management, biodiversity protection, and climate awareness. Through community participation, we strive to inspire environmentally conscious practices that preserve natural resources for future generations."
   },
   {
-    "name": "Community Development",
+    "name": "Development",
     "color": "#F08F1E",
     "icon": "development",
     "image": "images/programs/development.jpg",
-    "short": "Building resilient communities through empowerment, inclusion and sustainable livelihoods.",
-    "description": "Social and economic empowerment completes the picture. VAF's development programs focus on building livelihoods, supporting women's empowerment, and creating pathways to economic independence for individuals and families.",
-    "points": [
-      "Vocational training and skill development",
-      "Women's empowerment and self-help groups",
-      "Livelihood and micro-enterprise support",
-      "Disaster relief and community support"
-    ]
+    "short": "Building resilient communities through vocational training, livelihood support, and social empowerment programs.",
+    "description": "Strong communities are built through collective participation and inclusive growth. VAF works closely with locals to identify community needs and implement initiatives that promote civic responsibility, youth engagement, women empowerment, livelihood support, and social well-being. Our approach focuses on creating long-term, sustainable impact by empowering communities to become active partners in their own development."
   }
 ]

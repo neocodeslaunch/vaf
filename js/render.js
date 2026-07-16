@@ -20,7 +20,10 @@ function renderProgramDetails(programs) {
   return programs.map((p, i) => {
     const rev = i % 2 === 1 ? ' rev' : '';
     const altSection = i % 2 === 1 ? ' section-alt' : '';
-    const points = p.points.map(pt => `<li>${esc(pt)}</li>`).join('');
+    // `points` is optional — pillars may be described in prose alone.
+    const points = (p.points && p.points.length)
+      ? `<ul class="prog-list">${p.points.map(pt => `<li>${esc(pt)}</li>`).join('')}</ul>`
+      : '';
     return `
     <section class="section${altSection}">
       <div class="container prog-detail${rev}">
@@ -28,8 +31,9 @@ function renderProgramDetails(programs) {
         <div>
           <span class="eyebrow">Pillar ${i + 1}</span>
           <h2>${esc(p.name)}</h2>
+          <p class="prog-short">${esc(p.short)}</p>
           <p>${esc(p.description)}</p>
-          <ul class="prog-list">${points}</ul>
+          ${points}
         </div>
       </div>
     </section>`;
@@ -89,7 +93,7 @@ function renderNewsRows(events, limit) {
       <div>
         <span class="news-date">${formatDate(e.date)}</span>
         <h3>${esc(e.title)}</h3>
-        <a href="updates.html" class="card-link">Read More &rarr;</a>
+        <a href="events.html" class="card-link">Read More &rarr;</a>
       </div>
     </div>`).join('');
 }
@@ -141,7 +145,7 @@ function renderFeaturedCampaign(c) {
           <div><span class="ico">&#127795;</span> ${esc(c.highlight)}</div>
         </div>
         <p>${esc(c.description)}</p>
-        <a href="programs.html" class="btn btn-outline-green" style="margin-top:1rem;">View Campaign Details &rarr;</a>
+        <a href="approach.html" class="btn btn-outline-green" style="margin-top:1rem;">View Campaign Details &rarr;</a>
       </div>
       <div class="campaign-image"><img src="${c.image}" alt="${esc(c.title)}" loading="lazy"></div>
     </div>`;

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programs — Vector for Advancement Foundation</title>
+<title>Events — Vector for Advancement Foundation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,18 +17,23 @@
 
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">What We Do</span>
-    <h1>Programs built around what communities truly need</h1>
-    <p class="page-hero-lead">Four interconnected pillars — each program designed with the communities it serves, not just for them.</p>
+    <span class="eyebrow">News &amp; Initiatives</span>
+    <h1>Events &amp; Updates</h1>
+    <p class="page-hero-lead">Stay up to date with our latest news, programs and events.</p>
   </div>
 </section>
 
-<div id="programDetails"></div>
+<section class="section">
+  <div class="container">
+    <div class="news-grid" id="newsGrid"></div>
+    <p class="gallery-note" style="margin-top:2.5rem;">To add a new event, edit <strong>data/events.json</strong> — the cards below build automatically from that file. This page is updated up to twice per month as part of the maintenance plan.</p>
+  </div>
+</section>
 
 <div class="cta-band">
   <div class="container cta-inner">
-    <h2>Support a program directly</h2>
-    <p>Your contribution is tracked against a specific initiative so you can see where it goes.</p>
+    <h2>Support the work behind these updates</h2>
+    <p>Every initiative here is funded by contributions like yours.</p>
     <div class="cta-actions"><a href="donate.html" class="btn btn-primary">Donate Now</a></div>
   </div>
 </div>
@@ -37,6 +42,6 @@
 <script src="js/common.js"></script>
 <script src="js/render.js"></script>
 <script src="js/pages.js"></script>
-<script>initPrograms();</script>
+<script>initEvents();</script>
 </body>
 </html>

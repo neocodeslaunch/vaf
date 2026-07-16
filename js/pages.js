@@ -18,7 +18,7 @@ async function initHome() {
     setHTML('partnersTrack', renderPartners(site.partners));
     setHTML('featuredCampaign', renderFeaturedCampaign(site.featuredCampaign));
   }
-  if (programs) setHTML('programCards', renderProgramCards(programs, 'programs.html'));
+  if (programs) setHTML('programCards', renderProgramCards(programs, 'approach.html'));
   if (events) setHTML('newsRows', renderNewsRows(events, 3));
 
   initCarousel();
@@ -32,9 +32,9 @@ async function initAbout() {
   if (site) setHTML('teamGrid', renderTeam(site.team));
 }
 
-/* ================= PROGRAMS ================= */
-async function initPrograms() {
-  initLayout('programs.html');
+/* ================= APPROACH ================= */
+async function initApproach() {
+  initLayout('approach.html');
   const programs = await loadJSON('data/programs.json');
   if (programs) setHTML('programDetails', renderProgramDetails(programs));
 }
@@ -46,9 +46,9 @@ async function initGallery() {
   if (gallery) setHTML('galleryGrid', renderGallery(gallery));
 }
 
-/* ================= UPDATES ================= */
-async function initUpdates() {
-  initLayout('updates.html');
+/* ================= EVENTS ================= */
+async function initEvents() {
+  initLayout('events.html');
   const events = await loadJSON('data/events.json');
   if (events) setHTML('newsGrid', renderNewsCards(events));
 }

@@ -35,8 +35,9 @@ html { scroll-behavior: smooth; }
 html, body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
 }
+/* overflow-x guard lives on <html> only — on <body> it breaks the sticky header */
+html { overflow-x: hidden; }
 
 body {
   font-family: var(--font-body);
@@ -44,7 +45,6 @@ body {
   background: var(--white);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  padding-top: 84px;
 }
 
 /* Media never overflows its container */

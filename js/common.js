@@ -28,9 +28,9 @@ function icon(name) { return ICONS[name] || ''; }
 const NAV_LINKS = [
   { href: 'index.html',    label: 'Home' },
   { href: 'about.html',    label: 'About' },
-  { href: 'programs.html', label: 'Programs' },
+  { href: 'approach.html', label: 'Approach' },
   { href: 'gallery.html',  label: 'Gallery' },
-  { href: 'updates.html',  label: 'Updates' },
+  { href: 'events.html',   label: 'Events' },
   { href: 'donate.html',   label: 'Donate', donate: true },
   { href: 'contact.html',  label: 'Contact' }
 ];
@@ -99,29 +99,6 @@ function initLayout(currentPage) {
     );
   }
 
-  // Offset the body by the header's EXACT height so there is never a gap (or an
-  // overlap) below the fixed nav bar — at any viewport width or device pixel size.
-  syncHeaderOffset();
-  window.addEventListener('resize', syncHeaderOffset);
-  window.addEventListener('orientationchange', syncHeaderOffset);
-  window.addEventListener('load', syncHeaderOffset);
-  // ResizeObserver catches every header height change (line wraps, late font
-  // loads, zoom) that a resize event alone would miss — this is what makes it
-  // pixel-perfect regardless of the device.
-  const header = document.querySelector('.site-header');
-  if (header && 'ResizeObserver' in window) {
-    new ResizeObserver(syncHeaderOffset).observe(header);
-  }
-  // Fonts load asynchronously and can change the header height after first paint.
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncHeaderOffset);
-}
-
-/* ---------- Match body top padding to the fixed header height ---------- */
-function syncHeaderOffset() {
-  const header = document.querySelector('.site-header');
-  if (!header) return;
-  // Round up so sub-pixel header heights never leave a hairline gap.
-  document.body.style.paddingTop = Math.ceil(header.getBoundingClientRect().height) + 'px';
 }
 
 /* ---------- Data loader helper ---------- */

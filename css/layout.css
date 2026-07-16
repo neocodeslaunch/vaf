@@ -4,12 +4,16 @@
    ============================================================ */
 
 /* ---------- Header / Nav ---------- */
-.site-header {
-  position: fixed;
+/* The #header mount is the sticky element and stays in normal flow, so content
+   always begins exactly at the header's bottom edge — no gap, no overlap, at any
+   viewport or device pixel size, with no JS measuring required. */
+#header {
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
+}
+.site-header {
+  position: relative;   /* containing block for the mobile nav dropdown */
   background: var(--white);
   border-bottom: 0px solid var(--grey-light);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
