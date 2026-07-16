@@ -22,6 +22,7 @@ async function initHome() {
   if (events) setHTML('newsRows', renderNewsRows(events, 3));
 
   initCarousel();
+  initStatsSlider();
 }
 
 /* ================= ABOUT ================= */
@@ -171,6 +172,62 @@ function initCarousel() {
   buildDots();
   update();
   resetTimer();
+}
+
+/* ============================================================
+   IMPACT STATS SLIDER — arrow-controlled horizontal scroll
+   Auto-advances (like the partner carousel); pauses on hover.
+   Arrows hide automatically when all stats already fit on screen.
+   ============================================================ */
+function initStatsSlider() {
+  const slider   = document.querySelector('.stats-slider');
+  const viewport = slider && slider.querySelector('.stats-viewport');
+  const track    = document.getElementById('impactStats');
+  const prev     = document.getElementById('statPrev');
+  const next     = document.getElementById('statNext');
+  if (!slider || !viewport || !track || !prev || !next) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let timer;
+
+  function step() {
+    const card = track.querySelector('.stat-box');
+    const gap  = parseFloat(getComputedStyle(track).columnGap) || 14;
+    return card ? card.getBoundingClientRect().width + gap : 200;
+  }
+  function hasOverflow() {
+    return track.scrollWidth > viewport.clientWidth + 2;
+  }
+  function atEnd() {
+    return viewport.scrollLeft + viewport.clientWidth >= track.scrollWidth - 2;
+  }
+  function goNext() {
+    if (atEnd()) viewport.scrollTo({ left: 0, behavior: 'smooth' });
+    else viewport.scrollBy({ left: step(), behavior: 'smooth' });
+  }
+  function goPrev() {
+    if (viewport.scrollLeft <= 2) viewport.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+    else viewport.scrollBy({ left: -step(), behavior: 'smooth' });
+  }
+  function resetTimer() {
+    clearInterval(timer);
+    if (!reduce && hasOverflow()) timer = setInterval(goNext, 4000);
+  }
+  function update() {
+    const show = hasOverflow();
+    prev.style.display = show ? '' : 'none';
+    next.style.display = show ? '' : 'none';
+    resetTimer();
+  }
+
+  prev.addEventListener('click', () => { goPrev(); resetTimer(); });
+  next.addEventListener('click', () => { goNext(); resetTimer(); });
+  slider.addEventListener('mouseenter', () => clearInterval(timer));
+  slider.addEventListener('mouseleave', resetTimer);
+
+  let rt;
+  window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(update, 150); });
+  update();
 }
 
 /* ============================================================

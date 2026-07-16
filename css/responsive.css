@@ -4,6 +4,11 @@
    Tested: iPhone SE, Galaxy A, iPhone 14, Galaxy S, iPad, Desktop
    ============================================================ */
 
+/* ---- Desktop: 4-col grids ---- */
+@media (min-width: 1001px) {
+  .attr-row { grid-template-columns: repeat(4, 1fr); }
+}
+
 /* ---- 1000px: 4-col grids → 2-col ---- */
 @media (max-width: 1000px) {
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
@@ -95,13 +100,22 @@
   .team-grid,
   .news-grid,
   .gallery-grid { grid-template-columns: 1fr; }
-  .attr-row { grid-template-columns: 1fr; }
+  .attr-row { grid-template-columns: repeat(2, 1fr); }
 
-  .section { padding: 52px 0; }
+  .section { padding: 40px 0; }
     /* Keep the hero visual consistent with desktop: use the same diagonal white wedge and
      ensure the hero text column keeps the same max-width and left offset as desktop. */
-  .hero { padding: 52px 0 64px; background-position: center right; }
+  .hero {
+    padding: 40px 0 44px;
+    background-image: linear-gradient(to bottom,
+      rgba(255,255,255,0.90),
+      rgba(255,255,255,0.80) 55%,
+      rgba(255,255,255,0.62)
+    ), url('../images/banner/hero.jpg');
+    background-position: center center;
+  }
   .hero-grid { max-width: 520px; margin-left: clamp(14px, 4vw, 36px); margin-right: auto; }
+  .hero-lead { margin-bottom: 1.2rem; }
   .page-hero { padding: 36px 0 32px; }
 
   /* News rows */
@@ -162,7 +176,15 @@
   .footer-grid { gap: 20px; }
 }
 
+/* ---- Impact stats slider (mobile: fixed-width cards that scroll) ---- */
+@media (max-width: 640px) {
+  .stats-slider { padding: 0 44px; }        /* room for the side arrows */
+  .stats-track { flex-wrap: nowrap; }
+  .stats-track .stat-box { flex: 0 0 auto; width: 190px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
+  .stats-viewport { scroll-behavior: auto; }
 }

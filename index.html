@@ -24,29 +24,65 @@
       <p class="hero-lead">Vector for Advancement Foundation (VAF) is established to bridge the gap between community needs and meaningful actions—connecting people, ideas, institutions, and resources to create practical, measurable, and lasting solutions.</p>
       <div class="hero-actions">
         <a href="updates.html" class="btn btn-navy">Explore Our Work →</a>
-        <a href="donate.html" class="btn btn-outline-green">Support Our Work</a>
+        <a href="donate.html" class="btn btn-outline-green">
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          Support Our Work
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- WHO WE ARE -->
-<section class="section">
+<section class="section" id="who-we-are">
   <div class="container about-grid">
     <div class="about-visual">
       <div class="about-block ab-main"><img src="images/programs/healthcare.jpg" alt="VAF at work"></div>
       <div class="about-block ab-accent"></div>
     </div>
     <div class="about-copy">
-      <h3><span class="eyebrow">Who We Are</span></h3>
-      <h2></h2>
+      <span class="eyebrow">Who We Are</span>
       <p>Vector for Advancement Foundation (VAF) is a community development organization committed in driving meaningful and measurable social progress. Just as Vector represents both direction and purpose, VAF serves as a guiding force that connects communities, institutions and individuals to create social impact. </p>
       <p>We believe every <b>Transformation</b> begins with <b>Compassion</b> and grows through collective <b>Action</b>.</p>
-      <div class="attr-row">
-        <div class="attr-tag"><span class="attr-dot"></span>Community Driven</div>
-        <div class="attr-tag"><span class="attr-dot"></span>Transparent &amp; Accountable</div>
-        <div class="attr-tag"><span class="attr-dot"></span>Inclusive &amp; Collaborative</div>
-        <div class="attr-tag"><span class="attr-dot"></span>Sustainable Impact</div>
+      <div class="attr-row attr-features">
+        <div class="attr-tag">
+          <svg class="attr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#0277BD">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>Community Driven</span>
+        </div>
+        <div class="attr-tag">
+          <svg class="attr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#4C957A">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+          </svg>
+          <span>Transparent &amp; Accountable</span>
+        </div>
+        <div class="attr-tag">
+          <svg class="attr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#0C467B">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          <span>Inclusive &amp; Collaborative</span>
+        </div>
+        <div class="attr-tag">
+          <svg class="attr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#2E7D32">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.52-4.48 10-10 10Z"></path>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6"></path>
+          </svg>
+          <span>Sustainable Impact</span>
+        </div>
       </div>
       <a href="about.html" class="btn btn-outline">Learn More About Us →</a>
     </div>
@@ -67,7 +103,13 @@
   <div class="container">
     <span class="eyebrow center">Our Impact</span>
     <h2 class="center">Creating Change, Together</h2>
-    <div class="stats-grid" id="impactStats"></div>
+    <div class="stats-slider">
+      <button class="carousel-btn prev" id="statPrev" aria-label="Previous">&#8249;</button>
+      <div class="stats-viewport">
+        <div class="stats-track" id="impactStats"></div>
+      </div>
+      <button class="carousel-btn next" id="statNext" aria-label="Next">&#8250;</button>
+    </div>
   </div>
 </section>
 

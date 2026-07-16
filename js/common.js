@@ -98,6 +98,18 @@ function initLayout(currentPage) {
       a.addEventListener('click', () => mainNav.classList.remove('open'))
     );
   }
+
+  // Offset the body by the header's actual height so there is no gap below the
+  // fixed nav bar. The header height changes across breakpoints, so keep it synced.
+  syncHeaderOffset();
+  window.addEventListener('resize', syncHeaderOffset);
+  window.addEventListener('load', syncHeaderOffset);
+}
+
+/* ---------- Match body top padding to the fixed header height ---------- */
+function syncHeaderOffset() {
+  const header = document.querySelector('.site-header');
+  if (header) document.body.style.paddingTop = header.offsetHeight + 'px';
 }
 
 /* ---------- Data loader helper ---------- */
