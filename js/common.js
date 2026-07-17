@@ -48,8 +48,10 @@ function renderHeader(current) {
       <a href="index.html" class="logo-wrap">
         <img src="images/logo.png" alt="VAF Logo">
         <div class="logo-name">
-          <span class="logo-line logo-line-top">VECTOR</span>
-          <span class="logo-line logo-line-middle">for Advancement Foundation</span>
+          <span class="logo-lockup">
+            <span class="logo-line logo-line-top">VECTOR</span>
+            <span class="logo-line logo-line-middle"><span>For</span><span>Advancement</span><span>Foundation</span></span>
+          </span>
           <small>Compassion. Action. Transformation.</small>
         </div>
       </a>
@@ -69,7 +71,6 @@ function renderFooter() {
           <img src="images/logo.png" alt="VAF" style="width:44px;height:44px;object-fit:contain;">
           <div class="logo-name">Vector for Advancement Foundation<small>VAF</small></div>
         </a>
-        <p class="footer-tagline">Your Compassion. Our Action. Their Transformation.</p>
       </div>
       <div class="footer-links"><h4>Pages</h4>${links}</div>
       <div class="footer-meta">
