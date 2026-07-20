@@ -36,7 +36,26 @@ async function initAbout() {
 async function initApproach() {
   initLayout('approach.html');
   const programs = await loadJSON('data/programs.json');
-  if (programs) setHTML('programDetails', renderProgramDetails(programs));
+  if (programs) {
+    setHTML('programDetails', renderProgramDetails(programs));
+    initPillarToggles();
+  }
+}
+
+/* Expand/collapse each pillar's detailed description via its "Learn more" button. */
+function initPillarToggles() {
+  document.querySelectorAll('.pillar-card').forEach(card => {
+    const btn = card.querySelector('.pillar-learn');
+    const desc = card.querySelector('.pillar-desc');
+    if (!btn || !desc) return;
+    btn.addEventListener('click', () => {
+      const open = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.querySelector('.pillar-learn-txt').textContent = open ? 'Show less' : 'Learn more';
+      // Animate height from the measured content size (auto can't transition).
+      desc.style.maxHeight = open ? desc.scrollHeight + 'px' : '';
+    });
+  });
 }
 
 /* ================= GALLERY ================= */

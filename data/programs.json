@@ -3,7 +3,7 @@
     "name": "Healthcare",
     "color": "#0277BD",
     "icon": "health",
-    "image": "images/programs/healthcare.jpg",
+    "image": "images/pillars/healthcare.jpg",
     "short": "Promoting preventive care, health awareness and access to quality healthcare for all.",
     "description": "Good health is the foundation of a thriving community and access to essential healthcare is a right, not a privilege. VAF promotes accessible healthcare through health awareness programmes, preventive care initiatives, medical camps and partnerships with healthcare professionals and institutions. Our goal is to encourage healthier lifestyles, improve health literacy, and support communities in accessing essential healthcare services."
   },
@@ -11,7 +11,7 @@
     "name": "Education",
     "color": "#4C957A",
     "icon": "education",
-    "image": "images/events/event2.jpg",
+    "image": "images/pillars/education.png",
     "short": "Empowering minds through quality education, digital literacy and skill development.",
     "description": "Education empowers individuals transforming communities and quality education is the most powerful tool for breaking cycles of poverty. VAF works to enhance learning opportunities by supporting students, promoting digital and financial literacy, organizing career guidance programmes and encouraging skill development. We believe that education is a lifelong journey that enables people to build brighter futures for themselves and society."
   },
@@ -19,7 +19,7 @@
     "name": "Environment",
     "color": "#2E7D32",
     "icon": "environment",
-    "image": "images/programs/environment.jpg",
+    "image": "images/pillars/environment.jpg",
     "short": "Protecting our planet through sustainable practices, conservation and community participation.",
     "description": "As healthy communities need healthy ecosystems, a sustainable future depends on responsible environmental stewardship. VAF undertakes initiatives that promote environmental conservation, tree plantation, waste management, biodiversity protection, and climate awareness. Through community participation, we strive to inspire environmentally conscious practices that preserve natural resources for future generations."
   },
@@ -27,7 +27,7 @@
     "name": "Development",
     "color": "#F08F1E",
     "icon": "development",
-    "image": "images/programs/development.jpg",
+    "image": "images/pillars/development.jpg",
     "short": "Building resilient communities through vocational training, livelihood support, and social empowerment programs.",
     "description": "Strong communities are built through collective participation and inclusive growth. VAF works closely with locals to identify community needs and implement initiatives that promote civic responsibility, youth engagement, women empowerment, livelihood support, and social well-being. Our approach focuses on creating long-term, sustainable impact by empowering communities to become active partners in their own development."
   }

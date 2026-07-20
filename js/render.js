@@ -15,28 +15,24 @@ function renderProgramCards(programs, linkTarget) {
     </article>`).join('');
 }
 
-/* ---------- Program detail blocks (programs page) ---------- */
+/* ---------- Pillar cards (Approach page) ---------- */
 function renderProgramDetails(programs) {
   return programs.map((p, i) => {
     const rev = i % 2 === 1 ? ' rev' : '';
-    const altSection = i % 2 === 1 ? ' section-alt' : '';
-    // `points` is optional — pillars may be described in prose alone.
-    const points = (p.points && p.points.length)
-      ? `<ul class="prog-list">${p.points.map(pt => `<li>${esc(pt)}</li>`).join('')}</ul>`
-      : '';
     return `
-    <section class="section${altSection}">
-      <div class="container prog-detail${rev}">
-        <div class="prog-media"><img src="${p.image}" alt="${esc(p.name)}" loading="lazy"></div>
-        <div>
-          <span class="eyebrow">Pillar ${i + 1}</span>
-          <h2>${esc(p.name)}</h2>
-          <p class="prog-short">${esc(p.short)}</p>
-          <p>${esc(p.description)}</p>
-          ${points}
-        </div>
+    <article class="pillar-card reveal${rev}" style="--pc:${p.color}">
+      <div class="pillar-card-media"><img src="${p.image}" alt="${esc(p.name)}" loading="lazy"></div>
+      <div class="pillar-card-body">
+        <span class="pillar-badge">Pillar ${i + 1}</span>
+        <h2>${esc(p.name)}</h2>
+        <p class="pillar-short">${esc(p.short)}</p>
+        <button class="pillar-learn" type="button" aria-expanded="false">
+          <span class="pillar-learn-txt">Learn more</span>
+          <svg class="pillar-learn-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="pillar-desc"><p>${esc(p.description)}</p></div>
       </div>
-    </section>`;
+    </article>`;
   }).join('');
 }
 

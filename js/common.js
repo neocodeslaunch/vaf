@@ -100,6 +100,77 @@ function initLayout(currentPage) {
     );
   }
 
+  // Floating "Support Us" button on every page except Contact
+  if (currentPage !== 'contact.html') initSupportFab();
+
+  // Subtle on-scroll reveal animations
+  initReveal();
+}
+
+/* ---------- Floating support button (expands to actions) ---------- */
+function initSupportFab() {
+  if (document.querySelector('.fab')) return;
+  const fab = document.createElement('div');
+  fab.className = 'fab';
+  fab.innerHTML = `
+    <div class="fab-actions" id="fabActions">
+      <a class="fab-action" href="donate.html"><span class="fab-label">Donate</span>
+        <span class="fab-mini" style="--fc:#F08F1E"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 2.5 6 6 6c1.8 0 3 1 3 1s1.2-1 3-1c3.5 0 5 3.5 3.5 6.5C19 16.65 12 21 12 21z"/></svg></span></a>
+      <a class="fab-action" href="contact.html"><span class="fab-label">Volunteer</span>
+        <span class="fab-mini" style="--fc:#0277BD"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="7" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M2 20c0-3.3 3.1-5 7-5s7 1.7 7 5v1H2z"/></svg></span></a>
+      <a class="fab-action" href="contact.html"><span class="fab-label">Contact</span>
+        <span class="fab-mini" style="--fc:#4C957A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m4 6 8 6 8-6"/></svg></span></a>
+    </div>
+    <button class="fab-toggle" id="fabToggle" aria-label="Support us" aria-expanded="false">
+      <svg class="fab-ico open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 2.5 6 6 6c1.8 0 3 1 3 1s1.2-1 3-1c3.5 0 5 3.5 3.5 6.5C19 16.65 12 21 12 21z"/></svg>
+      <svg class="fab-ico close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      <span class="fab-text">Support&nbsp;Us</span>
+    </button>`;
+  document.body.appendChild(fab);
+
+  const toggle = fab.querySelector('#fabToggle');
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = fab.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  // Close when clicking elsewhere or pressing Escape
+  document.addEventListener('click', (e) => {
+    if (!fab.contains(e.target)) { fab.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { fab.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+}
+
+/* ---------- On-scroll reveal (subtle fade / rise) ---------- */
+function initReveal() {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Auto-tag the common card-like blocks so templates don't each need a class.
+  const SELECTOR = '.pcard, .value-row, .news-card, .news-row, .gallery-item, .team-card,'
+    + '.pillar-card, .principle, .mstep, .mv-card, .promise-card, .vision-card, .campaign-grid';
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    document.querySelectorAll(SELECTOR + ', .reveal').forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  function scan() {
+    document.querySelectorAll(SELECTOR).forEach(el => el.classList.add('reveal'));
+    document.querySelectorAll('.reveal:not([data-reveal])').forEach(el => {
+      el.setAttribute('data-reveal', '');
+      io.observe(el);
+    });
+  }
+  scan();
+  // Content is injected asynchronously (loadJSON), so re-scan on DOM changes.
+  new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
 }
 
 /* ---------- Data loader helper ---------- */

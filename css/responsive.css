@@ -66,6 +66,10 @@
     gap: 28px;
   }
   .prog-detail.rev .prog-media { order: 0; }
+  /* Pillar cards stack: image on top, body below (image side no longer alternates) */
+  .pillar-card { grid-template-columns: 1fr; }
+  .pillar-card.rev .pillar-card-media { order: 0; }
+  .pillar-card-media { min-height: 200px; max-height: 240px; }
   /* .about-visual keeps its aspect-ratio and scales with width. `width: 100%` is
      required: its children are absolutely positioned, so with auto margins alone
      the grid item would shrink-to-fit to zero. */
@@ -111,19 +115,30 @@
   .attr-row.attr-features { grid-template-columns: repeat(2, 1fr); gap: 16px 8px; }
 
   .section { padding: 40px 0; }
-    /* Keep the hero visual consistent with desktop: use the same diagonal white wedge and
-     ensure the hero text column keeps the same max-width and left offset as desktop. */
+  /* Mobile hero: banner photo on top, copy on white below (matches the reference).
+     The photo bottom is masked so it melts into the page background. */
   .hero {
-    padding: 40px 0 44px;
-    background-image: linear-gradient(to bottom,
-      rgba(255,255,255,0.90),
-      rgba(255,255,255,0.80) 55%,
-      rgba(255,255,255,0.62)
-    ), url('../images/banner/hero.jpg');
-    background-position: center center;
+    padding: 0 0 30px;
+    background: none;
+    text-align: left;
   }
-  .hero-grid { max-width: 520px; margin-left: clamp(14px, 4vw, 36px); margin-right: auto; }
-  .hero-lead { margin-bottom: 1.2rem; }
+  .hero-photo {
+    display: block;
+    width: 100%;
+    height: 44vh;
+    min-height: 280px;
+    max-height: 390px;
+    background: url('../images/banner/hero-banner.png') center top / cover no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, #000 66%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 66%, transparent 100%);
+  }
+  .hero-grid {
+    max-width: 100%;
+    margin: -2px auto 0;
+    padding: 0 24px;
+  }
+  .hero h1 { font-size: 1.95rem; line-height: 1.1; }
+  .hero-lead { font-size: 0.95rem; margin-bottom: 1.2rem; }
   .page-hero { padding: 36px 0 32px; }
 
   /* News rows */
@@ -163,6 +178,10 @@
 
   /* Contact */
   .contact-form button { width: 100%; justify-content: center; }
+
+  /* Floating support button: tuck into the corner a touch more */
+  .fab { right: 16px; bottom: 16px; }
+  .fab-toggle { width: 52px; height: 52px; }
 }
 
 /* ---- 380px: small phones (iPhone SE 2nd gen, Galaxy A02) ---- */
@@ -177,7 +196,7 @@
   .logo-name { font-size: 0.66rem; }
   .site-header .logo-line-top { font-size: 1.5rem; }
   .site-header .logo-line-middle { font-size: 0.35rem; letter-spacing: 0.01em; }
-  .hero h1 { font-size: 1.75rem; }
+  .hero h1 { font-size: 1.7rem; }
   h2 { font-size: 1.4rem; }
   .amount-display { font-size: 1.8rem; }
   .slider-wrap { padding: 0.9rem; }

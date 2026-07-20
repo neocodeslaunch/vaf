@@ -3,11 +3,12 @@
    Hero, cards, stats, values, carousel, gallery, forms, slider
    ============================================================ */
 
-/* ---------- Hero (home) ---------- */
+/* ---------- Hero (home) ----------
+   Desktop: the banner is the section background with a soft white fade on the left
+   so the copy stays readable. Mobile switches to a photo-on-top layout (responsive.css). */
 .hero {
   position: relative;
   padding: 70px 0 20px;
-  /* Strong white area on the extreme left, then a gentle horizontal fade to reveal the image on the right */
   background-image: linear-gradient(to top right,
     rgba(255,255,255,1) 18%,
     rgba(255,255,255,1) 26%,
@@ -16,16 +17,17 @@
     rgba(255,255,255,0.6) 56%,
     rgba(255,255,255,0.28) 70%,
     rgba(255,255,255,0) 82%
-  ), url('../images/banner/hero.jpg');
+  ), url('../images/banner/hero-banner.png');
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
-  background-attachment: cover; /* fixed causes jitter on iOS */
   overflow: hidden;
   -webkit-background-size: cover;
   text-align: left;
 }
-/* hero-grid already defined above */
+/* Mobile shows the banner as a photo on top (see responsive.css); on desktop the
+   banner is the section background, so the inline photo is hidden here. */
+.hero-photo { display: none; }
 .hero-grid {
   display: flex;
   flex-direction: column;
@@ -33,11 +35,12 @@
   align-items: flex-start;
   position: relative;
   z-index: 1;
-  max-width: 520px; /* keep text area narrow so it sits fully on white */
-  margin-left: clamp(18px, 6vw, 60px); /* push content toward the left white area */
+  max-width: 480px; /* keep the text column narrow so it sits fully on the white */
+  margin-left: clamp(18px, 6vw, 60px);
   margin-right: auto;
   padding: 0 14px;
 }
+.hero-copy { max-width: 100%; }
 .hero-tag {
   display: inline-block;
   background: rgba(76,149,122,0.25);
@@ -467,6 +470,77 @@
 }
 .section-alt .prog-list li { background: var(--white); }
 
+/* ---------- Pillar cards (Approach page) ---------- */
+.pillar-cards { display: flex; flex-direction: column; gap: 30px; }
+.pillar-card {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  background: var(--white);
+  border: 1px solid var(--grey-light);
+  border-top: 4px solid var(--pc, var(--navy));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(12, 70, 123, 0.07);
+}
+.pillar-card.rev .pillar-card-media { order: 2; }
+.pillar-card-media { min-height: 250px; background: var(--off-white); }
+.pillar-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pillar-card-body { padding: 1.9rem 2.1rem; }
+.pillar-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--pc, var(--navy));
+  padding: 4px 11px;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+.pillar-card-body h2 { color: var(--pc, var(--navy)); margin-bottom: 0.4rem; }
+.pillar-short {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: var(--navy);
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+}
+.pillar-learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pc, var(--navy));
+  background: color-mix(in srgb, var(--pc, var(--navy)) 10%, #fff);
+  border: 1px solid color-mix(in srgb, var(--pc, var(--navy)) 30%, #fff);
+  border-radius: 999px;
+  padding: 0.5rem 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.pillar-learn:hover { background: color-mix(in srgb, var(--pc, var(--navy)) 16%, #fff); }
+.pillar-learn:active { transform: scale(0.97); }
+.pillar-learn-ico { width: 15px; height: 15px; transition: transform 0.3s ease; }
+.pillar-card.open .pillar-learn-ico { transform: rotate(180deg); }
+
+/* Collapsible detail — animates open from a measured max-height set in JS. */
+.pillar-desc {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+.pillar-card.open .pillar-desc { opacity: 1; margin-top: 0.9rem; }
+.pillar-desc p { font-size: 0.94rem; color: var(--text-body); }
+
 /* ---------- Mission / Vision cards ---------- */
 .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 2rem; }
 .mv-card {
@@ -490,6 +564,25 @@
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 55px; align-items: start; }
 .contact-details { display: flex; flex-direction: column; gap: 10px; margin-top: 1.2rem; font-size: 0.95rem; }
+
+/* Social icon buttons (contact page) */
+.social-row { display: flex; gap: 12px; margin-top: 0.9rem; }
+.social-btn {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--off-white);
+  border: 1px solid var(--grey-light);
+  color: var(--text-muted);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.social-btn svg { width: 20px; height: 20px; }
+.social-btn:hover {
+  background: var(--sc, var(--navy));
+  border-color: var(--sc, var(--navy));
+  color: #fff;
+  transform: translateY(-3px);
+}
 .contact-form {
   position: relative;
   background: var(--white);
@@ -528,3 +621,96 @@
   font-size: 0.9rem;
   border: 1px dashed var(--grey-mid);
 }
+
+/* ============================================================
+   ON-SCROLL REVEAL — subtle fade + rise for cards
+   ============================================================ */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Hero copy rises in on load, so motion is visible immediately without scrolling. */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-copy > * { animation: heroRise 0.7s ease both; }
+.hero-copy > h1            { animation-delay: 0.05s; }
+.hero-copy > .hero-lead    { animation-delay: 0.20s; }
+.hero-copy > .hero-actions { animation-delay: 0.35s; }
+
+/* Images ease in from slightly dim once loaded/revealed. */
+.pillar-card-media img, .about-block img, .news-card-img img, .gallery-item img { transition: opacity 0.6s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero-copy > * { animation: none !important; }
+}
+
+/* ============================================================
+   FLOATING "SUPPORT US" BUTTON
+   ============================================================ */
+.fab {
+  position: fixed;
+  right: 22px; bottom: 22px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+.fab-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.95);
+  transform-origin: bottom right;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  pointer-events: none;
+}
+.fab.open .fab-actions { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+.fab-action { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.fab-label {
+  background: var(--white);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.13);
+  white-space: nowrap;
+}
+.fab-mini {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--fc, var(--navy));
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.fab-action:hover .fab-mini { transform: scale(1.09); }
+.fab-mini svg { width: 20px; height: 20px; }
+
+.fab-toggle {
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(240, 143, 30, 0.45);
+  transition: background 0.2s ease, transform 0.25s ease;
+}
+.fab-toggle:hover { background: var(--orange-dark); transform: translateY(-2px); }
+.fab.open .fab-toggle { transform: rotate(90deg); }
+.fab-toggle .fab-ico { width: 24px; height: 24px; }
+.fab-toggle .fab-ico.close { display: none; }
+.fab.open .fab-toggle .fab-ico.open { display: none; }
+.fab.open .fab-toggle .fab-ico.close { display: block; }
+.fab-toggle .fab-text { display: none; }
