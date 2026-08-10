@@ -32,6 +32,7 @@ async function initAbout() {
   if (site) setHTML('teamGrid', renderTeam(site.team));
 }
 
+
 /* ================= APPROACH ================= */
 async function initApproach() {
   initLayout('approach.html');
@@ -99,8 +100,8 @@ function setHTML(id, html) {
    ============================================================ */
 function initCarousel() {
   const track = document.getElementById('partnersTrack');
-  const prev  = document.getElementById('carPrev');
-  const next  = document.getElementById('carNext');
+  const prev = document.getElementById('carPrev');
+  const next = document.getElementById('carNext');
   const dotsWrap = document.getElementById('carDots');
   if (!track) return;
 
@@ -138,7 +139,7 @@ function initCarousel() {
   function update() {
     const { perView, cardW } = setCardWidths();
     const step = cardW + GAP;
-    const max  = maxIndex(perView);
+    const max = maxIndex(perView);
     if (index > max) index = max;
     track.style.transform = `translateX(-${index * step}px)`;
     if (dotsWrap) {
@@ -174,7 +175,7 @@ function initCarousel() {
   }
 
   if (prev) prev.addEventListener('click', () => { go(-1); resetTimer(); });
-  if (next) next.addEventListener('click', () => { go(1);  resetTimer(); });
+  if (next) next.addEventListener('click', () => { go(1); resetTimer(); });
 
   const carouselEl = track.closest('.carousel');
   if (carouselEl) {
@@ -199,11 +200,11 @@ function initCarousel() {
    Arrows hide automatically when all stats already fit on screen.
    ============================================================ */
 function initStatsSlider() {
-  const slider   = document.querySelector('.stats-slider');
+  const slider = document.querySelector('.stats-slider');
   const viewport = slider && slider.querySelector('.stats-viewport');
-  const track    = document.getElementById('impactStats');
-  const prev     = document.getElementById('statPrev');
-  const next     = document.getElementById('statNext');
+  const track = document.getElementById('impactStats');
+  const prev = document.getElementById('statPrev');
+  const next = document.getElementById('statNext');
   if (!slider || !viewport || !track || !prev || !next) return;
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -211,7 +212,7 @@ function initStatsSlider() {
 
   function step() {
     const card = track.querySelector('.stat-box');
-    const gap  = parseFloat(getComputedStyle(track).columnGap) || 14;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 14;
     return card ? card.getBoundingClientRect().width + gap : 200;
   }
   function hasOverflow() {
@@ -332,9 +333,27 @@ function initContactForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const honeypot = form.querySelector('.honeypot');
+    const honeypot = form.querySelector('input[name="website"]');
     if (honeypot && honeypot.value) { form.reset(); return; }
-    status.textContent = 'Thank you! This is a demo — on the live site your message would be sent to the VAF team.';
+
+    const name = form.querySelector('#name').value.trim();
+    const email = form.querySelector('#email').value.trim();
+    const phone = form.querySelector('#phone').value.trim();
+    const subject = form.querySelector('#subject').value.trim();
+    const message = form.querySelector('#message').value.trim();
+
+    let waText = `*New Inquiry: ${subject}*\n\n`;
+    waText += `*Name:* ${name}\n`;
+    waText += `*Email:* ${email}\n`;
+    if (phone) waText += `*Phone:* ${phone}\n`;
+    waText += `\n*Message:*\n${message}`;
+
+    const waNumber = '918276015548';
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waText)}`;
+
+    window.open(waUrl, '_blank');
+
+    status.textContent = 'Opening WhatsApp to send your message...';
     form.reset();
   });
 }
