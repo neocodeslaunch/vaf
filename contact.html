@@ -120,7 +120,37 @@
           placeholder="Tell us how you'd like to get involved..."></textarea>
         <input type="text" name="website" aria-hidden="true" tabindex="-1" autocomplete="off"
           style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
-        <button type="submit" class="btn btn-primary">Send Message</button>
+        <style>
+          .contact-action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+          }
+          @media (min-width: 768px) {
+            .contact-action-buttons {
+              flex-direction: row;
+            }
+            .contact-action-buttons > * {
+              flex: 1;
+            }
+          }
+        </style>
+        <div class="contact-action-buttons">
+          <button type="submit" class="btn" style="background-color: #25D366; color: white; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 600;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.01 2.002c-5.522 0-9.998 4.477-9.998 9.998 0 1.956.556 3.784 1.54 5.313L2.24 22.188l4.982-1.306a9.96 9.96 0 0 0 4.788 1.218h.004c5.52 0 9.996-4.477 9.996-9.997C22.01 6.577 17.532 2.002 12.01 2.002zM12.01 20.24c-1.656 0-3.276-.445-4.697-1.288l-.337-.2-3.486.914.93-3.398-.22-.35A8.102 8.102 0 0 1 3.868 12c0-4.498 3.66-8.157 8.143-8.157 4.496 0 8.156 3.66 8.156 8.157 0 4.496-3.66 8.156-8.156 8.156zm4.472-6.103c-.245-.123-1.452-.717-1.677-.8-.225-.083-.39-.123-.553.123-.163.245-.633.8-.776.963-.142.163-.284.183-.53.06-.245-.123-1.037-.382-1.975-1.217-.73-.65-1.224-1.454-1.367-1.7-.142-.245-.015-.378.107-.5.11-.11.245-.286.368-.43.122-.142.163-.245.245-.407.082-.163.04-.306-.02-.43-.06-.123-.553-1.336-.757-1.83-.2-.48-.403-.414-.553-.422-.142-.007-.306-.007-.47-.007a.9.9 0 0 0-.653.307c-.225.245-.857.838-.857 2.044s.878 2.37 1 2.533c.123.164 1.727 2.637 4.18 3.636.584.238 1.04.38 1.396.487.586.186 1.12.16 1.542.097.472-.07 1.453-.594 1.657-1.168.204-.574.204-1.066.142-1.168-.06-.102-.224-.163-.47-.286z"/>
+            </svg>
+            Send Message via WhatsApp
+          </button>
+          
+          <a href="mailto:vectorforadvancementfoundation@gmail.com" class="btn" style="background-color: #EA4335; color: white; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 600; text-decoration: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Mail Us Directly
+          </a>
+        </div>
         <p class="form-status" id="formStatus"></p>
       </form>
     </div>
