@@ -1,8 +1,15 @@
 [
-  { "image": "images/pillars/healthcare.jpg", "caption": "Free Health Check-up Camp", "category": "Healthcare" },
-  { "image": "images/events/event2.jpg", "caption": "Career Guidance Session", "category": "Education" },
-  { "image": "images/pillars/environment.jpg", "caption": "Tree Plantation Drive", "category": "Environment" },
-  { "image": "images/pillars/development.jpg", "caption": "Skill Development Training", "category": "Community Development" },
+  { "image": "images/gallery/clothes distribution.png", "caption": "Clothes Distribution", "category": "Community Development" },
+  { "image": "images/gallery/digital education.png", "caption": "Digital Education", "category": "Education" },
+  { "image": "images/gallery/education support.png", "caption": "Education Support", "category": "Education" },
+  { "image": "images/gallery/envcleaning.png", "caption": "Environment Cleaning", "category": "Environment" },
+  { "image": "images/gallery/eyechekup csamp.png", "caption": "Eye Checkup Camp", "category": "Healthcare" },
+  { "image": "images/gallery/flood relief.png", "caption": "Flood Relief", "category": "Community Development" },
   { "image": "images/gallery/gallery1.jpg", "caption": "Medicine Distribution", "category": "Healthcare" },
-  { "image": "images/gallery/gallery3.jpg", "caption": "Women Empowerment Program", "category": "Community Development" }
+  { "image": "images/gallery/gallery2.jpg", "caption": "Community Outreach", "category": "Community Development" },
+  { "image": "images/gallery/gallery3.jpg", "caption": "Women Empowerment Program", "category": "Community Development" },
+  { "image": "images/gallery/healthcheckup.png", "caption": "Health Checkup", "category": "Healthcare" },
+  { "image": "images/gallery/online awareness.png", "caption": "Online Awareness", "category": "Education" },
+  { "image": "images/gallery/tree plantation.png", "caption": "Tree Plantation", "category": "Environment" },
+  { "image": "images/gallery/women empowerment.png", "caption": "Women Empowerment", "category": "Community Development" }
 ]
